@@ -1,0 +1,28 @@
+# --- ARCHIVOS SENSIBLES ---
+config/config.php
+
+# --- ENTORNO / SISTEMA ---
+*.env
+.env.local
+
+# --- SISTEMA OPERATIVO ---
+.DS_Store
+Thumbs.db
+
+# --- XAMPP / CACHE ---
+/xampp/
+/tmp/
+/logs/
+
+# --- ARCHIVOS DE BACKUP ---
+*.bak
+*.old
+*.zip
+
+# --- BASES DE DATOS ---
+*.sql
+*.sqlite
+*.db
+
+# --- NODE / DEPENDENCIAS (si en el futuro agregás algo) ---
+node_modules/
