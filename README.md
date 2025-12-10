@@ -34,7 +34,7 @@ Galletitas_Proyecto/
 │   └── img/
 │
 ├── config/
-│   └── config.php (NO subir a GitHub)
+│   └── config.php
 │
 ├── includes/
 │   ├── header.php
