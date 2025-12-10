@@ -1,4 +1,4 @@
-# 🍪 Magic Druida Bakery  
+# Magic Druida Bakery  
 ### Tienda online de galletitas artesanales — PHP + MySQL + Vanilla JS
 
 Proyecto web fullstack desarrollado para práctica profesional y portfolio.  
@@ -6,7 +6,7 @@ Incluye catálogo dinámico, carrito persistente, checkout, almacenamiento de ó
 
 ---
 
-## 🚀 Tecnologías utilizadas
+## Tecnologías utilizadas
 
 **Frontend**  
 - HTML5  
@@ -24,7 +24,7 @@ Incluye catálogo dinámico, carrito persistente, checkout, almacenamiento de ó
 
 ---
 
-## 📁 Estructura del proyecto
+## Estructura del proyecto
 
 ```
 Galletitas_Proyecto/
@@ -59,7 +59,7 @@ Galletitas_Proyecto/
 
 ---
 
-## 🛠 Instalación en local (XAMPP)
+## Instalación en local (XAMPP)
 
 1. Copiar la carpeta del proyecto dentro de:
 
@@ -104,7 +104,7 @@ http://localhost/Galletitas_Proyecto/
 
 ---
 
-## 🛒 Funcionalidades principales
+## Funcionalidades principales
 
 - Listado de productos desde MySQL  
 - Página de detalle de producto  
@@ -118,7 +118,7 @@ http://localhost/Galletitas_Proyecto/
 
 ---
 
-## 📦 Base de datos
+## Base de datos
 
 El proyecto incluye:
 
@@ -130,7 +130,7 @@ Para cargarla: importar `database.sql`.
 
 ---
 
-## 🔒 Seguridad aplicada
+## Seguridad aplicada
 
 - Conexión PDO + prepared statements  
 - Sanitización de entrada con `htmlspecialchars()`  
@@ -139,7 +139,7 @@ Para cargarla: importar `database.sql`.
 
 ---
 
-## 📌 Mejoras futuras (roadmap)
+## Mejoras futuras (roadmap)
 
 - Panel admin (ABM de productos)  
 - Autenticación de usuarios  
@@ -150,7 +150,7 @@ Para cargarla: importar `database.sql`.
 
 ---
 
-## 👨‍💻 Autor
+## Autor
 
 **Juan Pablo Leiva**  
 Proyecto de portfolio — Desarrollo Web
