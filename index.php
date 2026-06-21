@@ -2,21 +2,20 @@
 require_once __DIR__ . '/includes/header.php';
 require_once __DIR__ . '/lib/database.php';
 
-// Conexión a la base de datos
+
 $pdo = getPDO();
 
-// Obtener productos (consulta segura y profesional)
 $stmt = $pdo->query('SELECT id, name, price, image FROM products ORDER BY id ASC');
 $products = $stmt->fetchAll();
 ?>
 
 <div class="container">
 
-  <!-- Carrusel Swiper -->
+  
   <div class="swiper mySwiper">
     <div class="swiper-wrapper">
       <div class="swiper-slide">
-        <img src="<?php echo asset('assets/img/banana.jpg'); ?>" alt="Banana Moon (el inconsciente)">
+        <img src="<?php echo asset('assets/img/banana.jpeg'); ?>" alt="Banana Moon (el inconsciente)">
         <div class="slide-caption">Banana Moon – Dulzura y sueños</div>
       </div>
 
@@ -36,7 +35,6 @@ $products = $stmt->fetchAll();
     <div class="swiper-pagination"></div>
   </div>
 
-  <!-- Sección Hero -->
   <section class="hero">
 
     <div class="hero-card hero-left">
@@ -54,7 +52,6 @@ $products = $stmt->fetchAll();
 
   </section>
 
-  <!-- Productos Destacados -->
   <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 2rem; margin-bottom: 1rem;">
     <h2 style="margin: 0;">Un rincón mágico y floral</h2>
     <a href="<?php echo url('products.php'); ?>" class="btn primary" style="flex: none; width: auto;">Ver todos</a>
@@ -73,7 +70,7 @@ $products = $stmt->fetchAll();
         <p class="price"><?php echo money_ar($p['price']); ?></p>
 
         <div class="flex">
-          <a class="btn" href="<?php echo url('product.php?id=' . $p['id']); ?>">Ver</a>
+         <a class="btn" href="<?php echo url('product.php') . '?id=' . $p['id']; ?>">Ver</a>
           <button class="btn primary" data-add data-id="<?php echo $p['id']; ?>">Agregar</button>
         </div>
       </div>
@@ -83,13 +80,12 @@ $products = $stmt->fetchAll();
 
 </div>
 
-<!-- Botones flotantes -->
 <div class="floating-contact">
   <a href="https://www.instagram.com/magicdruidabakery/profilecard/?igsh=Mm5ldzdkODV6ODVy" target="_blank" class="contact-btn instagram">
-    <img src="<?php echo asset('assets/img/instagram.png'); ?>" alt="Instagram">
+    <img src="<?php echo asset('assets/img/ins.JPG'); ?>" alt="Instagram">
   </a>
 
-  <a href="https://wa.me/5491151581480" target="_blank" class="contact-btn whatsapp">
+  <a href="https://wa.me/<?php echo WHATSAPP_NUMBER; ?>" target="_blank" class="contact-btn whatsapp">
     <img src="<?php echo asset('assets/img/logowp.png'); ?>" alt="WhatsApp">
   </a>
 </div>

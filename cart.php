@@ -6,9 +6,10 @@ require_once __DIR__ . '/lib/database.php';
 start_session_once();
 $cart = $_SESSION['cart'] ?? [];
 
-// ==============================
-// Carrito vacío
-// ==============================
+if (empty($_SESSION['csrf'])) {
+    $_SESSION['csrf'] = bin2hex(random_bytes(32));
+}
+
 if (empty($cart)) {
     echo '<h1 style="margin-top:2rem; text-align:center;">Tu carrito está vacío</h1>';
     echo '<p style="text-align:center; margin:1rem 0;">Todavía no agregaste productos.</p>';
@@ -18,9 +19,7 @@ if (empty($cart)) {
     exit;
 }
 
-// ==============================
-// Obtener datos de productos
-// ==============================
+
 $pdo = getPDO();
 $ids = array_keys($cart);
 $ids = array_filter($ids, fn($n) => is_numeric($n));
@@ -31,9 +30,7 @@ $stmt->execute($ids);
 
 $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-// ==============================
-// Calcular total
-// ==============================
+
 $total = 0;
 ?>
 
@@ -50,7 +47,7 @@ $total = 0;
     </tr>
   </thead>
 
-  <!-- 👇 Dejo el ID aquí como estaba originalmente -->
+  
   <tbody id="cart-items">
     <?php foreach ($products as $p): 
       $qty = (int) ($cart[$p['id']]['qty'] ?? 0);
@@ -77,20 +74,19 @@ $total = 0;
 
 <p><strong>Total: <span id="cart-total"><?php echo money_ar($total); ?></span></strong></p>
 
-<a href="https://wa.me/5491151581480?text=<?php echo urlencode('Hola Magic Druida Bakery, quiero finalizar mi compra. Total: ' . money_ar($total)); ?>"
+<a href="https://wa.me/<?php echo WHATSAPP_NUMBER; ?>?text=<?php echo urlencode('Hola Magic Druida Bakery, quiero finalizar mi compra. Total: ' . money_ar($total)); ?>"
    class="btn primary finalize-whatsapp-btn"
    target="_blank">
   Finalizar compra por WhatsApp
 </a>
 
-<!-- Botones flotantes -->
 <div class="floating-contact">
   <a href="https://www.instagram.com/magicdruidabakery/profilecard/?igsh=Mm5ldzdkODV6ODVy" target="_blank" class="contact-btn instagram">
     <img src="<?php echo asset('assets/img/instagram.png'); ?>" alt="Instagram">
   </a>
-  <a href="https://wa.me/5491151581480" target="_blank" class="contact-btn whatsapp">
+  <a href="https://wa.me/<?php echo WHATSAPP_NUMBER; ?>?text=<?php echo urlencode('Hola Magic Druida Bakery, quiero finalizar mi compra. Total: ' . money_ar($total)); ?>"
+     target="_blank" class="contact-btn whatsapp">
     <img src="<?php echo asset('assets/img/logowp.png'); ?>" alt="WhatsApp">
   </a>
 </div>
-
 <?php include __DIR__ . '/includes/footer.php'; ?>

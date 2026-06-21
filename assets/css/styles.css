@@ -99,7 +99,8 @@ body {
 
 .hero-card:last-child img {
   width: 100%;
-  height: 100%;      /* ocupa todo el alto disponible */
+  height: auto;      /* ocupa todo el alto disponible */
+  max-height: 635px;
   object-fit: cover;
   border-radius: 14px;
   border: 1px solid #2a2a31;
@@ -371,7 +372,20 @@ h3 {
 .swiper-button-next,
 .swiper-button-prev {
   display: none !important;
+  background: var(--green-olive);
 }
+/* Bullets del Swiper en color verde oliva */
+.swiper-pagination-bullet {
+  background: #556b2f !important;
+  opacity: 0.6;
+}
+
+.swiper-pagination-bullet-active {
+  background: #556b2f !important;
+  opacity: 1;
+}
+
+
 
 /* ====== Carrito de compras simplificado ====== */
 #cart-items {
@@ -479,4 +493,31 @@ h3 {
     height: 300px;
   }
 }
+
+@media (max-width: 600px) {
+
+    /* Contenedor de los botones */
+    .container > div {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.8rem;
+    }
+
+    /* Botón principal */
+    .btn,
+    .btn.primary {
+        width: 100%;
+        text-align: center;
+        margin: 0 !important;
+    }
+
+    /* Botón volver */
+    .container a.btn {
+        margin-left: 0 !important;
+    }
+}
+
+
+
 
