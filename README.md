@@ -59,7 +59,7 @@ Galletitas_Proyecto/
 
 ---
 
-## 🛠 Instalación en local (XAMPP)
+## Instalación en local (XAMPP)
 
 1. Copiar la carpeta del proyecto dentro de:
 
